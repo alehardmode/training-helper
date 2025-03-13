@@ -1,0 +1,466 @@
+/* style.css */
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: #333; /* Default text color */
+    background-color: #f9f9f9; /* Light grey background */
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    color: #222; /* Darker heading color */
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    margin-bottom: 1em;
+    color: #555; /* Slightly lighter paragraph color */
+}
+
+a {
+    color: #007bff; /* Example link color - blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.button-primary, .button-secondary, .button-download {
+    display: inline-block;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button-primary {
+    background-color: #ffc107; /* Example primary button color - yellow/gold */
+    color: #222;
+    font-weight: bold;
+}
+
+.button-primary:hover {
+    background-color: #ffda6a; /* Lighter yellow on hover */
+}
+
+.button-secondary {
+    background-color: #f8f9fa; /* Light grey secondary button */
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.button-secondary:hover {
+    background-color: #e9ecef; /* Slightly darker grey on hover */
+}
+
+.button-download {
+    background-color: #007bff; /* Example download button color - blue */
+    color: #fff;
+    margin-right: 10px;
+}
+
+.button-download:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* Header Styles */
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Adjust logo size as needed */
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu li {
+    margin-left: 25px;
+}
+
+.menu li:first-child {
+    margin-left: 0;
+}
+
+.menu a {
+    color: white;
+    font-weight: 500; /* Slightly bolder menu links */
+}
+
+.menu a:hover {
+    color: #222;
+    text-decoration: none; /* Remove underline on hover for menu links if desired */
+}
+
+
+/* Hero Section Styles */
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/img/hero-image.jpg");
+    width: 100vw;
+    min-height: 100vh;
+    margin-left: calc(-50vw + 50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 5em;
+    margin-bottom: 0.3em;
+    color: white;
+}
+
+.hero-text h1 span {
+    color: #ffc107;
+}
+
+.hero-text p {
+    font-size: 2em;
+    margin-bottom: 2em;
+    color: white;
+}
+
+
+/* Tabs Section Styles */
+.tabs-section {
+    padding: 80px 0;
+}
+
+.tabs-container h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+.tab-button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0; /* Rounded top corners */
+    margin-right: 5px;
+    font-weight: 500;
+    color: #555;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button:hover, .tab-button.active {
+    background-color: #f9f9f9; /* Slightly darker on hover/active */
+    color: #222;
+    border-bottom: 1px solid transparent; /* visually lift the active tab */
+}
+
+.tab-button.active {
+    border-bottom: 1px solid #f9f9f9; /* Match background to hide border */
+}
+
+.tab-content {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 0 5px 5px 5px; /* Rounded bottom corners */
+    border: 1px solid #ddd;
+    display: none; /* Initially hide all tab contents */
+}
+
+.tab-content.active {
+    display: block; /* Show active tab content */
+}
+
+.tab-content-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tab-text {
+    flex: 1;
+    padding-right: 30px;
+}
+
+.tab-gallery {
+    flex: 1;
+    text-align: center;
+}
+
+.tab-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.08);
+}
+
+.download-buttons {
+    margin-top: 20px;
+}
+
+/* Gallery Section Styles */
+.gallery {
+    padding: 0px 0px;
+    background-color: #f8f9fa;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Limitar a máximo 3 columnas */
+@media (min-width: 1024px) {
+    .grid-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Responsive para tablets */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .grid-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 767px) {
+    .grid-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+.grid-gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-gallery img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+/* Form Section Styles */
+.form-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-container p {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.signup-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px; /* Space between input and button */
+}
+
+.signup-form input[type="email"] {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.signup-form button.button-primary {
+    white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.footer-logo img {
+    height: 30px; /* Adjust footer logo size */
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.footer-nav li {
+    margin-left: 20px;
+}
+
+.footer-nav li:first-child {
+    margin-left: 0;
+}
+
+.footer-nav a {
+    color: #ddd; /* Lighter color for footer links */
+}
+
+.footer-nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-social a {
+    color: #ddd;
+    margin-left: 20px;
+}
+
+.footer-social a:hover {
+    color: #fff;
+}
+
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    width: 100%; /* Full width on smaller screens */
+    color: #ddd;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments - Example for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .header-container, .hero-container, .tab-content-inner, .footer-container {
+        flex-direction: column;
+        text-align: center; /* Center align text in columns on small screens */
+    }
+
+    .hero-text, .tab-text {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .hero-image, .tab-gallery {
+        order: -1; /* Image appears before text on small screens */
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .signup-form {
+        flex-direction: column; /* Stack form elements vertically */
+        align-items: stretch; /* Full width input and button */
+    }
+
+    .signup-form button.button-primary {
+        width: 100%;
+    }
+
+    .footer-nav ul, .footer-social {
+        margin-top: 20px;
+        justify-content: center; /* Center align footer nav and social on small screens */
+    }
+
+    .footer-nav li {
+        margin: 0 10px;
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller main heading on small screens */
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+}
