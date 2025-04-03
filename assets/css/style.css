@@ -766,6 +766,7 @@ a:hover {
     .hero-text {
         width: 95%;
         max-width: 600px;
+        padding-top: 60px; /* Añadir espacio superior para evitar superposición con el menú */
     }
     
     .hero-text h1 {
@@ -787,11 +788,15 @@ a:hover {
     }
 
     .hero-image {
-        margin-top: 20px;
+        margin-top: 0; /* Eliminar margen superior */
+        padding-top: 60px; /* Añadir padding superior para separar del menú */
     }
 
     .menu ul {
         flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8); /* Fondo para el menú móvil */
+        padding: 10px;
+        border-radius: 5px;
     }
 
     .menu li {
