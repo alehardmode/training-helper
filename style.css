@@ -142,7 +142,7 @@ a:hover {
 
 /* Hero Section Styles */
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/img/hero-image.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/img/hero-image.webp");
     width: 100vw;
     min-height: 100vh;
     margin-left: calc(-50vw + 50%);
