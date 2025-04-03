@@ -1,5 +1,76 @@
 # Training Helper
 
+Sitio web para Training Helper, una aplicación que utiliza IA para analizar levantamientos en ejercicios de fuerza.
+
+## Estructura del Proyecto
+
+```
+training-helper/
+│
+├── assets/               # Archivos estáticos del proyecto
+│   ├── css/             # Archivos CSS
+│   │   └── style.css    # Estilos principales
+│   │
+│   ├── js/              # Archivos JavaScript
+│   │   ├── script.js    # Funcionalidad principal
+│   │   └── aos-config.js # Configuración de Animate On Scroll
+│   │
+│   ├── img/             # Imágenes
+│   │   ├── gallery/     # Imágenes de la galería
+│   │   ├── tabs/        # Imágenes para las pestañas
+│   │   └── ...          # Otras imágenes
+│   │
+│   └── video/           # Archivos de video
+│       ├── squat.mp4
+│       ├── bench.mp4
+│       └── deadlift.mp4
+│
+├── index.html           # Página principal
+├── LICENSE              # Licencia del proyecto
+└── README.md            # Este archivo
+```
+
+## Características
+
+- Interfaz moderna y responsive
+- Animaciones de scroll con AOS
+- Slideshow automático en el hero
+- Sistema de pestañas para mostrar características
+- Reproductor de video para tutoriales de ejercicios
+- Galería de imágenes con lightbox
+- Formulario de registro con modal de confirmación
+
+## Tecnologías Utilizadas
+
+- HTML5
+- CSS3 (Flexbox, Grid, Animaciones)
+- JavaScript (ES6+)
+- AOS (Animate On Scroll)
+- Font Awesome para iconos
+
+## Cómo Usar
+
+1. Clona el repositorio
+2. Abre `index.html` en tu navegador
+
+## Desarrollo
+
+Para modificar los estilos:
+```bash
+# Editar el archivo CSS principal
+nano assets/css/style.css
+```
+
+Para modificar la funcionalidad:
+```bash
+# Editar el archivo JavaScript principal
+nano assets/js/script.js
+```
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
 ## Características Interactivas Implementadas
 
 ### 1. Efectos de Hover
@@ -48,13 +119,6 @@
 - Diferentes efectos como fade-up con distintos retrasos.
 - Implementado con la biblioteca AOS (Animate On Scroll).
 - Aplicado a varios elementos como títulos, items de galería y contenedores.
-
-## Tecnologías Utilizadas
-- HTML5
-- CSS3 (Flexbox, Grid, Animaciones, Transiciones)
-- JavaScript (Vanilla)
-- AOS (Animate On Scroll)
-- Font Awesome (para iconos)
 
 ## Responsive Design
 - Diseño adaptativo para móviles, tablets y escritorio.

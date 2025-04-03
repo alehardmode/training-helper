@@ -1,8 +1,7 @@
 // script.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar AOS (Animate On Scroll)
-    AOS.init();
-
+    // No inicializamos AOS aquí porque se hace en aos-config.js
+    
     // Gestión de pestañas
     initTabs();
     
@@ -123,8 +122,16 @@ function initSlideshow() {
         showSlide(slideIndex);
     }
     
-    // Mostrar la primera diapositiva
-    showSlide(0);
+    // Encontrar el índice del slide activo en el HTML
+    let initialSlideIndex = 0;
+    slides.forEach((slide, index) => {
+        if (slide.classList.contains('active')) {
+            initialSlideIndex = index;
+        }
+    });
+    
+    // Mostrar la diapositiva que está marcada como activa en el HTML
+    showSlide(initialSlideIndex);
     
     // Configurar el cambio automático cada 5 segundos
     setInterval(nextSlide, 5000);
