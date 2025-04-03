@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
 
@@ -28,11 +30,39 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1>Analiza tus <br> <span>levantamientos con IA</span></h1>
-            <p>Redescubre el entrenamiento</p>
+    <!-- Hero Section with Slideshow -->
+    <div class="hero-slideshow">
+        <div class="slide fade">
+            <div class="hero-image slide1">
+                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                    <h1>Analiza tus <br> <span>levantamientos con IA</span></h1>
+                    <p>Redescubre el entrenamiento</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide fade">
+            <div class="hero-image slide2">
+                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                    <h1>Mejora tu <br> <span>técnica con precisión</span></h1>
+                    <p>Tecnología de vanguardia</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide fade">
+            <div class="hero-image slide3">
+                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                    <h1>Entrena <br> <span>de forma inteligente</span></h1>
+                    <p>Maximiza tus resultados</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slideshow-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
     </div>
 
@@ -128,30 +158,80 @@
         </div>
     </section>
 
-    <!-- Galería de Imágenes -->
+    <!-- Galería de Imágenes con Lightbox -->
     <section id="galeria" class="gallery">
-        <h2>Nuestra Galería</h2>
+        <h2 data-aos="fade-up">Nuestra Galería</h2>
         <div class="grid-gallery">
-            <img src="img/gallery-1.svg" alt="Placeholder 1">
-            <img src="img/gallery-2.svg" alt="Placeholder 2">
-            <img src="img/gallery-3.svg" alt="Placeholder 3">
-            <img src="img/gallery-4.svg" alt="Placeholder 4">
-            <img src="img/gallery-5.svg" alt="Placeholder 5">
-            <img src="img/gallery-6.svg" alt="Placeholder 6">
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="img/gallery-1.svg" alt="Placeholder 1" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span><i class="fas fa-search-plus"></i></span>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="img/gallery-2.svg" alt="Placeholder 2" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span><i class="fas fa-search-plus"></i></span>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="img/gallery-3.svg" alt="Placeholder 3" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span><i class="fas fa-search-plus"></i></span>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="img/gallery-4.svg" alt="Placeholder 4" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span><i class="fas fa-search-plus"></i></span>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="img/gallery-5.svg" alt="Placeholder 5" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span><i class="fas fa-search-plus"></i></span>
+                </div>
+            </div>
+            <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="img/gallery-6.svg" alt="Placeholder 6" class="gallery-img">
+                <div class="gallery-overlay">
+                    <span><i class="fas fa-search-plus"></i></span>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption"></div>
+        <a class="lightbox-prev">&#10094;</a>
+        <a class="lightbox-next">&#10095;</a>
+    </div>
+
     <!-- Form Section -->
     <section id="registro" class="form-section">
-        <div class="container form-container">
+        <div class="container form-container" data-aos="fade-up">
             <h2>Regístrate para empezar a analizar tus levantamientos</h2>
             <p>Únete a Training Helper y lleva tu entrenamiento al siguiente nivel.</p>
-            <form class="signup-form">
-                <input type="email" placeholder="Tu correo electrónico" required>
+            <form id="signup-form" class="signup-form">
+                <input type="text" id="nombre" placeholder="Tu nombre" required>
+                <input type="email" id="email" placeholder="Tu correo electrónico" required>
                 <button type="submit" class="button-primary">Regístrate</button>
             </form>
         </div>
     </section>
+
+    <!-- Modal de confirmación -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>¡Registro Exitoso!</h3>
+            <div id="modal-message"></div>
+            <button class="button-primary modal-btn">Aceptar</button>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -175,6 +255,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
