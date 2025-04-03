@@ -126,7 +126,7 @@ a:hover {
 }
 
 .logo img {
-    height: 40px; /* Adjust logo size as needed */
+    height: 80px; /* Adjust logo size as needed */
     transition: transform 0.3s ease;
 }
 
@@ -708,7 +708,7 @@ a:hover {
 }
 
 .footer-logo img {
-    height: 40px;
+    height: 80px;
 }
 
 .footer-nav ul {
