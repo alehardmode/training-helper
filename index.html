@@ -35,7 +35,7 @@
     <div class="hero-slideshow">
         <div class="slide fade">
             <div class="hero-image slide1">
-                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                <div class="hero-text">
                     <h1>Analiza tus <br> <span>levantamientos con IA</span></h1>
                     <p>Redescubre el entrenamiento</p>
                 </div>
@@ -44,16 +44,16 @@
         
         <div class="slide fade">
             <div class="hero-image slide2">
-                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                <div class="hero-text">
                     <h1>Mejora tu <br> <span>técnica con precisión</span></h1>
                     <p>Tecnología de vanguardia</p>
                 </div>
             </div>
         </div>
         
-        <div class="slide fade">
+        <div class="slide fade active">
             <div class="hero-image slide3">
-                <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+                <div class="hero-text">
                     <h1>Entrena <br> <span>de forma inteligente</span></h1>
                     <p>Maximiza tus resultados</p>
                 </div>
@@ -63,7 +63,7 @@
         <div class="slideshow-dots">
             <span class="dot"></span>
             <span class="dot"></span>
-            <span class="dot"></span>
+            <span class="dot active"></span>
         </div>
     </div>
 
@@ -295,5 +295,28 @@
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Inicializar AOS con configuración para que no interfiera con el centrado
+        AOS.init({
+            once: true,
+            offset: 50
+        });
+        
+        // Asegurar que el slideshow esté inicializado correctamente
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mostrar slide activo
+            let slides = document.querySelectorAll('.slide');
+            let dots = document.querySelectorAll('.dot');
+            
+            // Si no hay slide activo, activar el primero
+            let activeSlide = document.querySelector('.slide.active');
+            if (!activeSlide && slides.length > 0) {
+                slides[0].classList.add('active');
+                if (dots.length > 0) {
+                    dots[0].classList.add('active');
+                }
+            }
+        });
+    </script>
 </body>
 </html>
