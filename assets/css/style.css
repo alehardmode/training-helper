@@ -134,6 +134,16 @@ a:hover {
     transform: scale(1.05);
 }
 
+/* Título de la app (visible solo en móvil) */
+.app-title {
+    display: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.3em;
+    margin: 0;
+    text-align: center;
+}
+
 .menu ul {
     list-style: none;
     padding: 0;
@@ -175,6 +185,23 @@ a:hover {
 
 .menu a:not(.button-primary):hover::after {
     width: 100%;
+}
+
+/* Botón de hamburguesa para menú móvil */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.menu-toggle:hover {
+    color: #ffc107;
 }
 
 /* Hero Slideshow Styles */
@@ -756,18 +783,88 @@ a:hover {
 /* Responsive Styles */
 @media (max-width: 768px) {
     .container {
-        width: 90%;
+        width: 95%;
     }
 
-    .header-container, .hero-container, .tab-content-inner, .footer-container {
+    .header {
+        padding: 10px 0;
+    }
+    
+    .header.scrolled {
+        padding: 8px 0;
+    }
+
+    .header-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        align-items: center;
+        position: relative;
+    }
+    
+    /* Logo más pequeño y a la izquierda en móvil */
+    .logo {
+        grid-column: 1;
+        justify-self: start;
+    }
+    
+    .logo img {
+        height: 60px;
+    }
+    
+    /* Título de la app en el centro */
+    .app-title {
+        display: block;
+        grid-column: 2;
+        justify-self: center;
+        font-size: 1.2em;
+        white-space: nowrap;
+    }
+
+    /* Botón de hamburguesa a la derecha */
+    .menu-toggle {
+        display: block;
+        grid-column: 3;
+        justify-self: end;
+        margin-left: 0;
+        padding: 8px;
+    }
+
+    /* Estilos para menú móvil */
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95);
+        z-index: 1000;
+        transition: right 0.3s ease;
+        padding: 70px 20px 20px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .menu.active {
+        right: 0;
+    }
+
+    .menu ul {
         flex-direction: column;
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .menu li {
+        margin: 15px 0;
+        width: 100%;
         text-align: center;
     }
 
     .hero-text {
         width: 95%;
         max-width: 600px;
-        padding-top: 60px; /* Añadir espacio superior para evitar superposición con el menú */
+        padding-top: 0;
     }
     
     .hero-text h1 {
@@ -789,19 +886,8 @@ a:hover {
     }
 
     .hero-image {
-        margin-top: 0; /* Eliminar margen superior */
-        padding-top: 60px; /* Añadir padding superior para separar del menú */
-    }
-
-    .menu ul {
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.8); /* Fondo para el menú móvil */
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-    .menu li {
-        margin: 10px 0;
+        margin-top: 0;
+        padding-top: 60px; /* Añadir padding superior para dar espacio al encabezado */
     }
 
     .signup-form {
@@ -856,7 +942,7 @@ a:hover {
 
 .videos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns:80epeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }

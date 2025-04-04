@@ -8,6 +8,7 @@ import { initLightbox } from './modules/lightbox.js';
 import { initForm } from './modules/form.js';
 import { initVideoControl } from './modules/video.js';
 import { initAOS } from './modules/aos.js';
+import { initMobileMenu } from './modules/mobile-menu.js';
 
 // Inicializar todos los módulos cuando el DOM esté cargado
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,4 +20,5 @@ document.addEventListener('DOMContentLoaded', function() {
     initLightbox();
     initForm();
     initVideoControl();
+    initMobileMenu();
 }); 
